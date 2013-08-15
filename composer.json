@@ -1,0 +1,57 @@
+{
+	"name": "johnshopkins/wpcomposed",
+	"description": "Load WordPress core and plugins via Composer",
+	"keywords": ["WordPress", "Composer", "WordPress Packagist"],
+	"license": "MIT",
+	"homepage": "https://github.com/johnshopkins/wpcomposed",
+	"authors": [
+        {
+            "name": "Jason Rhodes", 
+            "email": "jason.matthew.rhodes@gmail.com"
+        },
+        {
+            "name": "Jen Wachter", 
+            "email": "jenleighkelly@gmail.com",
+            "homepage": "http://www.jenwachter.com"
+        }
+    ],
+	"repositories": [
+	    {
+	        "type": "package",
+	        "package": {
+	            "name": "wordpress/wordpress",
+	            "version": "3.6",
+	            "source": {
+	                "url": "git@github.com:WordPress/WordPress.git",
+	                "type": "git",
+	                "reference": "3.6"
+	            }
+	        }
+	    },
+	    {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+	],
+
+	"require": {
+		"php": ">=5.2.4",
+		"wordpress/wordpress": "3.6",
+		"composer/installers": "~1.0"
+	},
+	
+	"scripts": {
+        "post-install-cmd": [
+        	"bin/wp-config-redirect"
+        ],
+        "post-update-cmd": [
+        	"bin/wp-config-redirect"
+        ]
+    },
+    
+    "extra": {
+        "installer-paths": {
+            "public/assets/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    }
+}
