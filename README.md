@@ -25,20 +25,11 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 ## How it works
 
-### In Composer
-
 WordPress is loaded as a _package_ by referencing its source on GitHub, while WordPress Packagist is loaded as a _repository_, which allows us to require plugins from it like we require packages from Packagist.
 
-When either the `update` or `install` commands are run, the `wp-config-redirect` script is triggered. This script takes the following code:
-```bash
-<?php require dirname(dirname(__DIR__)) . '/config/wp-config.php';
-```
-and places it in `vendor/wordpress/wp-config.php`. If you recall, step 3 of the setup was to place the WordPress config file in `config/wp-config.php`. By default, WordPress is only looking for the config file in its root directory and one level up. Since we don't want to change WordPress core, we're running a script to place the contents of our config file in a place where WordPress can find it.
+When either the `update` or `install` Composer commands are run, the `wp-config-symlink` script is triggered, which creates a symlink from `vendor/wordpress/wp-config.php`, where WordPress expects to find a config file, to `config/wp-config.php`, where we manage our config file.
 
-
-### In the file system
-
-A few symlinks exist in locations that WordPress expects to find its files. If you take a look in `public`, you'll see three symlinks:
+In addition to the symlink created by our Composer-hooked script, a few more symlinks exist in locations that WordPress expects to find its files. If you take a look in `public`, you'll see three symlinks:
 
 ```bash
 wp-admin -> ../vendor/wordpress/wordpress/wp-admin

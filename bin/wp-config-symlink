@@ -4,8 +4,12 @@
 # Solves a problem with WordPress being kept in the Composer-managed
 # vendor directory, where it looks for wp-config.php only one level
 # up from the wp directory. After composer install/update, we run this
-# command to create a dummy wp-config.php file that includes our real
-# config file, managed in the /config directory (duh).
+# command to create a symlink to our real config file, managed in the
+# /config directory.
 ########################################################################
 
-echo "<?php require dirname(dirname(__DIR__)) . '/config/wp-config.php';" > "vendor/wordpress/wp-config.php"
+WP_CONFIG=vendor/wordpress/wp-config.php
+
+if ! [ -h "${WP_CONFIG}" ]; then
+	ln -s ../../config/wp-config.php ${WP_CONFIG}
+fi

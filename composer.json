@@ -41,10 +41,10 @@
 	
 	"scripts": {
         "post-install-cmd": [
-        	"bin/wp-config-redirect"
+        	"bin/wp-config-symlink"
         ],
         "post-update-cmd": [
-        	"bin/wp-config-redirect"
+        	"bin/wp-config-symlink"
         ]
     },
     
