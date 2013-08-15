@@ -36,8 +36,7 @@
 
 	"require": {
 		"php": ">=5.2.4",
-		"wordpress/wordpress": "3.6",
-		"composer/installers": "~1.0"
+		"wordpress/wordpress": "3.6"
 	},
 	
 	"scripts": {
