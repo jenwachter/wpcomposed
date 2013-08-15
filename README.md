@@ -21,11 +21,21 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 1. Go to `yoursite/wp-admin/` and run through the WordPress install.
 
+1. Install some plugins using [WordPress Packagist](http://wpackagist.org/). Advanced Custom Fields, for example:
+
+```json
+"require": {
+	"php": ">=5.2.4",
+	"wordpress/wordpress": "3.6"
+    "wpackagist/advanced-custom-fields": "4.2.*"
+}
+```
+
 
 
 ## How it works
 
-WordPress is loaded as a _package_ by referencing its source on GitHub, while WordPress Packagist is loaded as a _repository_, which allows us to require plugins from it like we require packages from Packagist.
+WordPress is loaded as a _package_ by referencing its source on GitHub, while [WordPress Packagist](http://wpackagist.org/) is loaded as a _repository_, which allows us to require plugins from it like we require packages from Packagist.
 
 When either the `update` or `install` Composer commands are run, the `wp-config-symlink` script is triggered, which creates a symlink from `vendor/wordpress/wp-config.php`, where WordPress expects to find a config file, to `config/wp-config.php`, where we manage our config file.
 
