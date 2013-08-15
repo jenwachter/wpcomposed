@@ -23,7 +23,7 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 1. Install some plugins using [WordPress Packagist](http://wpackagist.org/). Advanced Custom Fields, for example:
 
-```json
+```javascript
 "require": {
 	"php": ">=5.2.4",
 	"wordpress/wordpress": "3.6"
