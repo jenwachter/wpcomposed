@@ -10,7 +10,13 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 1. Run `composer update` to install WordPress.
 
-1. Copy `vendor/wordpress/wordpress/wp-config-sample.php` to `config/wp-config.php`. In this file, do a couple things:
+1. Copy `vendor/wordpress/wordpress/wp-config-sample.php` to `config/wp-config.php`.
+
+	```bash
+	cp vendor/wordpress/wordpress/wp-config-sample.php config/wp-config.php
+	```
+
+1. In `config/wp-config.php`, do a couple things:
     1. Update database settings
     2. Define the following two constants, which will tell WordPress where to find plugins, themes, and uploads:
 
@@ -19,7 +25,9 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 	define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/assets');
 	```
 
-1. Go to `yoursite/wp-admin/` and run through the WordPress install.
+1. Go to `yoursite.com/wordpress/wp-admin/` and run through the WordPress install.
+
+1. Login to WordPress and go to Settings > General. Update the "Side Address (URL)" to be just `yoursite.com` instead of `yoursite.com/wordpress`.
 
 1. Install some plugins using [WordPress Packagist](http://wpackagist.org/). Advanced Custom Fields, for example:
 
