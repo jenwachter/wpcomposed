@@ -22,7 +22,7 @@
 	            "name": "wordpress/wordpress",
 	            "version": "3.6",
 	            "source": {
-	                "url": "git@github.com:WordPress/WordPress.git",
+	                "url": "https://github.com/WordPress/WordPress.git",
 	                "type": "git",
 	                "reference": "3.6"
 	            }
