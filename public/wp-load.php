@@ -1,0 +1,1 @@
+../vendor/wordpress/wordpress/wp-load.php
