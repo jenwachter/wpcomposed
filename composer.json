@@ -41,9 +41,11 @@
 	
 	"scripts": {
         "post-install-cmd": [
+            "bin/wp-config-symlink",
         	"bin/wp-config-symlink"
         ],
         "post-update-cmd": [
+            "bin/wp-config-symlink",
         	"bin/wp-config-symlink"
         ]
     },
