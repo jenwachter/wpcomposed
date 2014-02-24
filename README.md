@@ -57,4 +57,4 @@ In addition to the symlink created by our Composer-hooked script, there is also 
 wp -> ../vendor/wordpress/wordpress/
 ```
 
-This allows WordPress to function in the `public` folder from its home in `vendor`.
+This makes WordPress think that it's running from a subdirectory in /public/wp when the core files are all in /vendor/wordpress/wordpress.
