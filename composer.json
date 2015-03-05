@@ -1,58 +1,43 @@
 {
-	"name": "johnshopkins/wpcomposed",
+	"name": "jenwachter/wpcomposed",
 	"description": "Load WordPress core and plugins via Composer",
-	"keywords": ["WordPress", "Composer", "WordPress Packagist"],
 	"license": "MIT",
-	"homepage": "https://github.com/johnshopkins/wpcomposed",
-	"authors": [
-        {
-            "name": "Jason Rhodes", 
-            "email": "jason.matthew.rhodes@gmail.com"
-        },
-        {
-            "name": "Jen Wachter", 
-            "email": "jenleighkelly@gmail.com",
-            "homepage": "http://www.jenwachter.com"
-        }
-    ],
+	"homepage": "https://github.com/jenwachter/wpcomposed",
 	"repositories": [
-	    {
-	        "type": "package",
-	        "package": {
-	            "name": "wordpress/wordpress",
-	            "version": "3.6",
-	            "source": {
-	                "url": "https://github.com/WordPress/WordPress.git",
-	                "type": "git",
-	                "reference": "3.6"
-	            }
-	        }
-	    },
-	    {
-            "type": "composer",
-            "url": "http://wpackagist.org"
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress/wordpress",
+        "version": "4.1.1",
+        "source": {
+          "url": "git@github.com:WordPress/WordPress.git",
+          "type": "git",
+          "reference": "4.1.1"
         }
+      }
+    },
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    }
 	],
-
 	"require": {
 		"php": ">=5.2.4",
-		"wordpress/wordpress": "3.6"
+		"wordpress/wordpress": "4.1.1"
 	},
-	
 	"scripts": {
-        "post-install-cmd": [
-            "bin/htaccess-symlink",
-        	"bin/wp-config-symlink"
-        ],
-        "post-update-cmd": [
-            "bin/htaccess-symlink",
-        	"bin/wp-config-symlink"
-        ]
-    },
-    
-    "extra": {
-        "installer-paths": {
-            "public/assets/plugins/{$name}/": ["type:wordpress-plugin"]
-        }
+    "post-install-cmd": [
+      "bin/wp-config-symlink",
+      "bin/wp-htaccess-remove"
+    ],
+    "post-update-cmd": [
+      "bin/wp-config-symlink",
+      "bin/wp-htaccess-remove"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "public/assets/plugins/{$name}/": ["type:wordpress-plugin"]
     }
+  }
 }

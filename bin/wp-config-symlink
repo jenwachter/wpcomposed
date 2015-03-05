@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
- 
+
 ########################################################################
 # Solves a problem with WordPress being kept in the Composer-managed
 # vendor directory, where it looks for wp-config.php only one level

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+HTACCESS="vendor/wordpress/wordpress/.htaccess"
+
+if [ -f $HTACCESS ]; then
+    rm $HTACCESS
+fi
