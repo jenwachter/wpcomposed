@@ -37,8 +37,8 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 {
 	"require": {
 		"php": ">=5.2.4",
-		"wordpress/wordpress": "3.6"
-	    "wpackagist/advanced-custom-fields": "4.2.*"
+		"wordpress/wordpress": "4.1.1",
+    "wpackagist/advanced-custom-fields": "4.2.*"
 	}
 }
 ```
@@ -49,7 +49,7 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 WordPress is loaded as a _package_ by referencing its source on GitHub, while [WordPress Packagist](http://wpackagist.org/) is loaded as a _repository_, which allows us to require plugins from it like we require packages from Packagist.
 
-When either the `update` or `install` Composer commands are run, the `wp-config-symlink` script is triggered, which creates a symlink from `vendor/wordpress/wp-config.php`, where WordPress expects to find a config file, to `config/wp-config.php`, where we manage our config file. Additionally, the `htaccess-symlink` scripted is triggered, which creates a symlink from `vendor/wordpress/wordpress/.htaccess`, where WordPress expects to find its .htaccess file to `.htaccess`, where we manage the .htaccess file.
+When either the `update` or `install` Composer commands are run, the `wp-config-symlink` script is triggered, which creates a symlink from `vendor/wordpress/wp-config.php`, where WordPress expects to find a config file, to `config/wp-config.php`, where we manage our config file. Additionally, the `wp-htaccess-remove` scripted is triggered, which removes the .httaccess file created by WordPress, forcing it to use our own (`public/.htaccess`).
 
 In addition to the symlink created by our Composer-hooked script, there is also a symlink in the `public` folder:
 
