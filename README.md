@@ -12,10 +12,10 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 1. Run `composer update` to install WordPress in the `vendor` directory.
 
-1. Copy the sample `wp-config.php` file to `config/wp-config.php`:
+1. Copy the sample `wp-config.php` file to `config/wp-config.php`, keeping the couple lines that are already in there:
 
 	```bash
-	cp vendor/wordpress/wordpress/wp-config-sample.php config/wp-config.php
+	cat vendor/wordpress/wordpress/wp-config-sample.php >> config/wp-config.php
 	```
 
 1. In `config/wp-config.php`, make a couple changes:
