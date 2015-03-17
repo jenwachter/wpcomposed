@@ -9,7 +9,8 @@
 ########################################################################
 
 WP_CONFIG=vendor/wordpress/wp-config.php
+OUR_CONFIG="config/wp-config.php"
 
-if ! [ -h "${WP_CONFIG}" ]; then
-	ln -s ../../config/wp-config.php ${WP_CONFIG}
+if ! [ -h ${WP_CONFIG} ]; then
+	ln -s $OUR_CONFIG $WP_CONFIG
 fi
