@@ -39,15 +39,15 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 1. Install some plugins using [WordPress Packagist](http://wpackagist.org/). Advanced Custom Fields, for example:
 
-```json
-{
-  "require": {
-    "php": ">=5.2.4",
-    "wordpress/wordpress": "4.1.1",
-    "wpackagist/advanced-custom-fields": "4.2.*"
-  }
-}
-```
+    ```json
+    {
+      "require": {
+        "php": ">=5.2.4",
+        "wordpress/wordpress": "4.1.1",
+        "wpackagist/advanced-custom-fields": "4.2.*"
+      }
+    }
+    ```
 
 
 
