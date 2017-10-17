@@ -14,9 +14,9 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 1. Copy the sample `wp-config.php` file to `config/wp-config.php`, keeping the couple lines that are already in there:
 
-	```bash
-	cat vendor/wordpress/wordpress/wp-config-sample.php >> config/wp-config.php
-	```
+    ```bash
+    cat vendor/wordpress/wordpress/wp-config-sample.php >> config/wp-config.php
+    ```
 
 1. In `config/wp-config.php`, make a couple changes:
     1. Update the database settings.
@@ -24,13 +24,14 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
     ```php
     define('WP_CONTENT_DIR', dirname(__DIR__) . '/public/assets');
-	define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/assets');
-	```
+    define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/assets');
+    ```
 
 1. Create a symlink to hook the WordPress install into the `public` directory:
-	```bash
-	ln -s ../vendor/wordpress/wordpress/ public/wp
-	```
+
+    ```bash
+    ln -s ../vendor/wordpress/wordpress/ public/wp
+    ```
 
 1. Go to `yoursite.com/wp/wp-admin/` and run through the WordPress install.
 
@@ -40,11 +41,11 @@ Load WordPress core and plugins via [Composer](http://getcomposer.org/).
 
 ```json
 {
-	"require": {
-		"php": ">=5.2.4",
-		"wordpress/wordpress": "4.1.1",
+  "require": {
+    "php": ">=5.2.4",
+    "wordpress/wordpress": "4.1.1",
     "wpackagist/advanced-custom-fields": "4.2.*"
-	}
+  }
 }
 ```
 
